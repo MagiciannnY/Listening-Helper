@@ -1,0 +1,165 @@
+/* #drop-zone {
+    width: 60%;
+    height: 100px;
+    padding: 20px;
+    border: 2px dashed #ccc;
+    text-align: center;
+    margin: 20px auto;
+    color: #060606;
+    background-color: #70ecfc;
+    border-radius: 15px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#drop-zone.drag-over {
+    border: 2px dashed #f7f6f6;
+    background-color: #a8dadc;
+} */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.title-container {
+    padding: 40px 20px 10px 20px;
+    text-align: center;
+}
+
+.title-text {
+    color: rgb(0, 0, 0);
+    font-size: 32px; /* 字体大小 */
+    font-weight: bold; /* 加粗 */
+    margin: 0; /* 去掉默认的外边距 */
+    font-family: 'SimSun', '宋体', sans-serif; /* 设置为宋体 */
+}
+
+/* 整体上传区域样式 */
+
+#drop-zone {
+    width: 40%;
+    margin: 30px auto;
+    padding: 40px 40px 40px 40px;
+    border: 2px dashed #ccc;
+    border-radius: 19px;
+    background-color: #f1faee;
+    text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex; /* 启用 Flexbox 布局 */
+    flex-direction: column; /* 子元素按列排列 */
+    justify-content: center; /* 垂直居中 */
+    align-items: center; /* 水平居中 */
+    /* height: 300px; 设置固定高度 */
+    height: 30%;
+    opacity: 0.5;
+}
+
+/* 拖拽区域悬浮时样式 */
+#drop-zone.drag-over {
+    /* background-color: #e8f5ff;
+    border-color: #76a9ff; */
+    border: 2px dashed #16c2c8;
+    background-color: #a8dadc;
+}
+
+
+.upload-content {
+    width: 100%; /* 父容器宽度与 #drop-zone 相同 */
+    height: 100%; /* 父容器高度与 #drop-zone 相同 */
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+/* 按钮样式 */
+.select-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 0;
+    line-height: normal;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'SimSun', '宋体', sans-serif;
+    color: #fff;
+    background-color: #457b9d; 
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    
+    width: 30%;
+    height: 25%;
+}
+
+.select-button:hover {
+    background-color: #e63946;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#file-zone {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    text-align: center;
+
+    height: 20%;
+
+    display: none;
+}
+
+.file-form {
+    width: 60%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-name {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.submit-button {
+    text-align: center;
+
+    padding: 0;
+    line-height: normal;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'SimSun', '宋体', sans-serif;
+    color: #fff;
+    background-color: #457b9d; 
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    
+    width: 20%;
+    height: 30%;
+    opacity: 0.7;
+}
+
+.submit-button:hover {
+    background-color: #e63946;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#history-zone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height: 20%;
+}

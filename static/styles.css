@@ -1,0 +1,88 @@
+#toggle-language-btn {
+  position: fixed; /* 固定在视口 */
+  top: 10px;
+  right: 30px; /* 距离右侧 5px */
+  z-index: 9999; /* 确保它在其他元素之上 */
+  width: 50px;  /* 按钮的宽度 */
+  height: 50px; /* 按钮的高度 */
+  border-radius: 50%; /* 使按钮成为圆形 */
+  color: white; /* 按钮文字的颜色 */
+  font-size: 14px; /* 文字大小 */
+  display: flex; /* 使用 flexbox 居中文本 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  cursor: pointer; /* 鼠标悬停时显示为可点击 */
+  text-align: center;
+  transition: background-color 0.3s; /* 平滑过渡效果 */
+	background-color: #3498db; /* EN: 蓝色 */
+}
+
+#toggle-language-btn:hover {
+  opacity: 0.8; /* 鼠标悬停时增加一点透明度 */
+}
+
+#toggle-language-btn.en {
+  background-color: #3498db; /* EN: 蓝色 */
+}
+
+#toggle-language-btn.zh {
+  background-color: #e74c3c; /* ZH: 红色 */
+}
+
+#toggle-language-btn.nu {
+  background-color: #2c3e50; /* NU: 黑色 */
+}
+
+
+#content {
+    /* margin: 20px; */
+    display: flex;                /* 使用 Flexbox 布局 */
+    flex-direction: column;       /* 垂直排列子元素 */
+    /* justify-content: center;      垂直居中 */
+    align-items: center;          /* 水平居中 */
+    /* height: 100vh;                设置容器高度为视口高度 */
+    margin: 40px 0;                    /* 去掉默认的外边距 */
+    padding: 20px 0;                   
+    box-sizing: border-box;       /* 包括内边距和边框在内的宽高计算 */
+  }
+  
+  .text-item {
+    cursor: pointer;
+    padding: 15px 20px;
+    margin: 10px 10px;
+    background-color: #f0f0f0;
+    border-radius: 17px;
+    transition: background-color 0.3s ease, transform 0.2s ease;  /* 动画效果 */
+    width: 60%;  /* 设置宽度为页面宽度的 60% */
+    height: 60px;  /* 设置固定高度 60px */
+    box-sizing: border-box;  /* 确保宽度和高度包括内边距 */
+
+    display: flex;  /* 使用 Flex 布局 */
+    justify-content: left; 
+    align-items: center;
+    text-align: left;  /* 文本多行时居中 */
+  }
+  
+  .text-item:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.01);  /* 鼠标悬停时稍微放大 */
+  }
+
+  .text-item:active {
+    transform: scale(0.98);  /* 按下时稍微缩小 */
+  }
+
+  .text-item.playing {
+    background-color: #f0f40d;  /* 播放中的音频高亮显示 */
+    color: #000;
+  }
+
+#audio-player {
+  position: fixed; /* 固定在视口 */
+  bottom: 0;       /* 距离底部 0 */
+  left: 50%;         /* 距离左边 0 */
+	transform: translateX(-50%); /* 向左偏移 50% 使其居中 */
+  width: 60%;     /* 宽度为 100% */
+  z-index: 9999;   /* 确保它在其他元素之上 */
+  /* background-color: rgba(255, 255, 255, 0.5); 可选：给音频控件加个背景 */
+}

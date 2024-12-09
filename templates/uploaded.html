@@ -1,0 +1,39 @@
+<!-- templates/uploaded.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传结果</title>
+    <style>
+        #result {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30%%;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        #result p {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #result a {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="result">
+        {% if audio_name %}
+            <p>文件已成功处理！</p>
+            <a href="/static/{{ audio_name }}.html">查看结果</a>
+        {% else %}
+            <p>文件未处理成功。</p>
+        {% endif %}
+    </div>
+</body>
+</html>

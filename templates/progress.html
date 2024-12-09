@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>处理中...</title>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <style>
+        #processing {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30%%;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        #processing h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="processing">
+        <h1>正在处理文件，请稍候...</h1>
+    </div>
+    <script>
+        const socket = io();
+        socket.on('start_process', (data) => {
+            console.log(`开始处理文件: ${data.filename}`);
+        });
+        socket.on('finish_process', (data) => {
+            console.log(`文件处理完成: ${data.filename}`);
+            // 重定向到结果页面
+            window.location.href = `/uploaded`;
+        });
+        socket.on('error_process', (data) => {
+            console.error(`处理错误: ${data.error}`);
+            alert(`处理失败: ${data.error}`);
+        });
+    </script>
+</body>
+</html>
+

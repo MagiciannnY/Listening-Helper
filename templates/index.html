@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>音频文件上传</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='index_styles.css') }}">
+<link rel="icon" href="/static/img/icon.png">
+<style>
+
+  body {
+    background-image: url('/static/img/bg3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  a {
+    color: white; 
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Times New Roman', 'SimSun';
+  }
+
+  a:hover {
+    color: black;
+    text-decoration: underline;
+  }
+
+</style>
+</head>
+<body>
+
+    <div class="title-container">
+      <h1 class="title-text">上传音频文件</h1>
+    </div>
+
+    <div id="drop-zone">
+      <div class="upload-content">
+        <button class="select-button" id="selectbtn1">选择文件</button>
+      </div>
+    </div>
+    
+    <div id="file-zone" style="display: none;">
+      <form class="file-form" action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="audio-file" accept=".mp3" required style="display: none;">
+        <ul id="file-list" class="file-name"></ul>
+        <input class="submit-button" type="submit" value="上传">
+      </form>
+    </div>
+
+    <div id="history-zone" class="history">
+      <ul class="history-list" style="list-style-type: none; padding-left: 0;">
+        <li><a href="/static/cet6_202312_1_recording2.html" target="_blank">CET6-2023年12月(第一套)-C2</a></li>
+      </ul>
+    </div>
+
+  <script src="{{ url_for('static', filename='upload.js') }}"></script>
+</body>
+</html>
